@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,11 +30,11 @@ namespace ConsoleUI
                 Console.WriteLine(car.CarName);
             }
 
+            UserManager userManager = new UserManager(new EfUserDal());
+            userManager.Add(new User{UserId=3,FisrtName="Gonca",LastName="Üstünay",Email="gonca@email.com",Password="1112233" });
             
 
 
-            
-            
             
         }
     }
